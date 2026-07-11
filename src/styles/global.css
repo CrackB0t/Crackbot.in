@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { @apply scroll-smooth; }
+  body { 
+    @apply bg-crackbot-950 text-crackbot-100 font-sans antialiased;
+    background-image: var(--bg-grid), var(--bg-radial);
+    background-size: 60px 60px, cover;
+    background-position: center, center;
+  }
+  ::selection { @apply bg-terminal-green/30 text-white; }
+}
+
+@layer components {
+  .card {
+    @apply relative bg-crackbot-900/80 backdrop-blur-sm border border-crackbot-800/50 
+           rounded-xl p-6 transition-all duration-300 hover:border-terminal-green/30 
+           hover:shadow-[0_0_30px_rgba(0,212,170,0.1)] hover:shadow-lg;
+  }
+  .card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-terminal-green/5 to-transparent opacity-0 
+           transition-opacity duration-300 rounded-xl pointer-events-none;
+  }
+  .card:hover::before { @apply opacity-100; }
+  .btn {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-lg font-medium transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-terminal-green focus:ring-offset-2 focus:ring-offset-crackbot-950;
+  }
+  .btn-primary { @apply bg-terminal-green text-crackbot-950 hover:bg-terminal-green-bright hover:shadow-[0_0_20px_rgba(0,212,170,0.4)]; }
+  .btn-ghost { @apply text-crackbot-200 hover:text-terminal-green hover:bg-terminal-green/10 border border-crackbot-700; }
+  .terminal-text { @apply font-mono text-terminal-green; }
+  .section-title { @apply text-3xl md:text-4xl font-bold text-white mb-4; }
+  .section-subtitle { @apply text-crackbot-300 max-w-2xl mx-auto mb-12; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}
