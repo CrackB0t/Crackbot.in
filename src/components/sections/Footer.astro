@@ -18,8 +18,14 @@ const site = siteData;
           <Icon name="github" size="sm" class="text-terminal-green" />
           GitHub
         </a>
-        <a href={site.twitter} target="_blank" rel="noopener noreferrer" class="hover:text-terminal-green transition-colors text-terminal-green">Twitter</a>
-        <a href={site.discord} target="_blank" rel="noopener noreferrer" class="hover:text-terminal-green transition-colors text-terminal-green">Discord</a>
+        <a href={site.twitter} target="_blank" rel="noopener noreferrer" class="hover:text-terminal-green transition-colors text-terminal-green">
+          <Icon name="twitter" size="sm" class="text-terminal-green" />
+          Twitter
+        </a>
+        <a href={site.discord} target="_blank" rel="noopener noreferrer" class="hover:text-terminal-green transition-colors text-terminal-green">
+          <Icon name="discord" size="sm" class="text-terminal-green" />
+          Discord
+        </a>
       </div>
     </div>
     <p class="mt-4 text-center text-xs text-crackbot-500">© {new Date().getFullYear()} {site.name} • {site.tagline}</p>
