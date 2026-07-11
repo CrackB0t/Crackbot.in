@@ -1,6 +1,10 @@
 ---
+// Layout.astro - Root layout with global styles
 import '../styles/global.css';
 import siteData from '../data/site.json';
+import Icon from '../components/ui/Icon.astro';
+import Footer from '../components/sections/Footer.astro';
+
 const site = siteData;
 ---
 <!doctype html>
@@ -16,24 +20,6 @@ const site = siteData;
   </head>
   <body class="min-h-screen flex flex-col">
     <slot />
-    <footer class="border-t border-crackbot-800 mt-auto">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div class="flex items-center gap-3 text-crackbot-400">
-            <span class="terminal-text text-sm">system@crackbot:~$</span>
-            <span class="text-xs opacity-70">Independent Cybersecurity Research Group</span>
-          </div>
-          <div class="flex items-center gap-6 text-sm text-crackbot-400">
-            <a href={site.github} target="_blank" rel="noopener" class="hover:text-terminal-green transition-colors flex items-center gap-1">
-              <span set:html={site.iconGitHub} class="w-5 h-5" />
-              GitHub
-            </a>
-            <a href={site.twitter} target="_blank" rel="noopener" class="hover:text-terminal-green transition-colors">Twitter</a>
-            <a href={site.discord} target="_blank" rel="noopener" class="hover:text-terminal-green transition-colors">Discord</a>
-          </div>
-        </div>
-        <p class="mt-4 text-center text-xs text-crackbot-500">© {new Date().getFullYear()} {site.name} • {site.tagline}</p>
-      </div
-    </footer>
+    <Footer />
   </body>
 </html>

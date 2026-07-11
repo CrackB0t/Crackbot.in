@@ -1,6 +1,7 @@
 ---
 // TerminalHeader.astro - Professional hero (clean, no gimmicks)
 import Button from '../ui/Button.astro';
+import Icon from '../ui/Icon.astro';
 
 interface Props {
   title?: string;
@@ -68,9 +69,7 @@ const {
 
   <!-- Scroll indicator (mobile only) -->
   <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-crackbot-500 md:hidden">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-    </svg>
+    <Icon name="arrow-right" size="lg" class="text-terminal-green" />
   </div>
 </header>
 
