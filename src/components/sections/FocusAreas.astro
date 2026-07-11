@@ -1,22 +1,54 @@
 ---
-// FocusAreas.astro - Focus areas grid section
+// FocusAreas.astro - Professional research domains section
 import FocusCard from '../ui/FocusCard.astro';
-import SectionHeader from '../ui/SectionHeader.astro';
 import { focusAreas } from '../../data/focus-areas.json';
 ---
 
-<section id="focus" class="py-20 px-4 sm:px-6 lg:px-8">
+<section id="focus" class="py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
-    <SectionHeader
-      label="CORE FOCUS AREAS"
-      title="Research Domains"
-      description="Each domain represents a pillar of our research philosophy. Cards marked ACTIVE have live content — others are in active development."
-    />
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6" id="focus-grid">
+    <!-- Section header -->
+    <div class="text-center mb-16 lg:mb-20">
+      <span class="inline-flex items-center gap-2 bg-crackbot-900/50 border border-crackbot-700/50 rounded-full px-4 py-1.5 mb-6 text-xs sm:text-sm">
+        <span class="text-terminal-green font-mono uppercase tracking-wider">CORE FOCUS AREAS</span>
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">Research Domains</h2>
+      <p class="text-crackbot-400 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed">
+        Each domain represents a pillar of our research philosophy. Areas marked <span class="text-terminal-green font-mono">ACTIVE</span> have published work — others are in active development.
+      </p>
+    </div>
+
+    <!-- Card grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 lg:gap-8" id="focus-grid">
       {focusAreas.map((area, index) => (
         <FocusCard area={area} index={index} />
       ))}
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('[data-area]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    cards.forEach((card, i) => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.6s ease ' + (i * 100) + 'ms, transform 0.6s ease ' + (i * 100) + 'ms';
+      observer.observe(card);
+    });
+  });
+</script>
+
+<style>
+  .research-card {
+    @apply bg-crackbot-900/50 backdrop-blur-sm border border-crackbot-700/50 rounded-2xl p-5 md:p-6 hover:border-terminal-green/30 hover:bg-crackbot-800/50 transition-all duration-300;
+  }
+</style>

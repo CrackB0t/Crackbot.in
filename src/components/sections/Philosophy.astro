@@ -1,7 +1,6 @@
 ---
-// Philosophy.astro - Research philosophy section
+// Philosophy.astro - Professional research philosophy section
 import Icon from '../ui/Icon.astro';
-import SectionHeader from '../ui/SectionHeader.astro';
 
 interface Props {
   principles: any[];
@@ -11,42 +10,43 @@ interface Props {
 const { principles, codeBlock } = Astro.props;
 ---
 
-<section id="philosophy" class="py-20 px-4 sm:px-6 lg:px-8 bg-crackbot-900/30 border-y border-crackbot-700/50">
+<section id="philosophy" class="py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 bg-crackbot-900/30 border-y border-crackbot-700/50">
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-      <div class="order-2 lg:order-1">
-        <SectionHeader
-          label="RESEARCH PHILOSOPHY"
-          title="Every Finding Should Educate. Every Vulnerability Should Improve Security."
-          description="We believe in collaboration over competition, responsible disclosure over publicity, and knowledge sharing over knowledge hoarding. Our work is guided by principles that put the defender first."
-        />
-        
-        <div class="space-y-4">
+      <!-- Principles list -->
+      <div class="lg:pr-8">
+        <span class="inline-flex items-center gap-2 bg-crackbot-900/50 border border-crackbot-700/50 rounded-full px-4 py-1.5 mb-6 text-xs sm:text-sm">
+          <span class="text-terminal-green font-mono uppercase tracking-wider">RESEARCH PHILOSOPHY</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">Every Finding Educates. Every Vulnerability Improves Security.</h2>
+        <p class="text-crackbot-400 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+          We believe in collaboration over competition, responsible disclosure over publicity, and knowledge sharing over hoarding. Our work is guided by principles that put the defender first.
+        </p>
+        <div class="space-y-5">
           {principles.map(principle => (
             <div class="flex gap-4">
               <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-terminal-green/10 border border-terminal-green/20 flex items-center justify-center">
                 <Icon name="check" size="sm" />
               </div>
               <div>
-                <h4 class="font-semibold text-white">{principle.title}</h4>
-                <p class="text-crackbot-400 text-sm mt-1">{principle.description}</p>
+                <h4 class="font-semibold text-white text-base sm:text-lg">{principle.title}</h4>
+                <p class="text-crackbot-400 text-sm sm:text-base mt-1 leading-relaxed">{principle.description}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
       
-      <div class="relative order-1 lg:order-2">
+      <!-- Code block -->
+      <div class="relative">
         <div class="bg-crackbot-950/90 backdrop-blur-sm border border-crackbot-700/50 rounded-2xl p-6 md:p-8">
-          <div class="mb-6">
-            <div class="flex items-center gap-2 mb-4">
-              <div class="flex gap-1.5">
-                <div class="w-3 h-3 rounded-full bg-terminal-red" />
-                <div class="w-3 h-3 rounded-full bg-terminal-amber" />
-                <div class="w-3 h-3 rounded-full bg-terminal-green" />
-              </div>
-              <span class="terminal-text text-xs text-crackbot-400">principles.md</span>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="flex gap-1.5">
+              <div class="w-3 h-3 rounded-full bg-terminal-red" />
+              <div class="w-3 h-3 rounded-full bg-terminal-amber" />
+              <div class="w-3 h-3 rounded-full bg-terminal-green" />
             </div>
+            <span class="font-mono text-xs text-crackbot-400">principles.py</span>
           </div>
           <pre class="font-mono text-sm text-crackbot-200 overflow-x-auto"><code>{codeBlock}</code></pre>
         </div>

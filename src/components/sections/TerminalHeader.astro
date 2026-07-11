@@ -1,6 +1,5 @@
 ---
-// TerminalHeader.astro - Terminal-style hero header (clean, professional)
-import Icon from '../ui/Icon.astro';
+// TerminalHeader.astro - Professional hero (clean, no gimmicks)
 import Button from '../ui/Button.astro';
 
 interface Props {
@@ -14,60 +13,61 @@ const {
 } = Astro.props;
 ---
 
-<header class="terminal-header relative min-h-[90vh] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-  <!-- Animated background -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute inset-0 bg-radial-glow" />
-    <div class="absolute inset-0 bg-grid-pattern opacity-50" />
-    <div class="absolute inset-0 animate-scanline bg-gradient-to-b from-transparent via-terminal-green/5 to-transparent" style="height: 2px;" />
+<header class="hero relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-20 overflow-hidden">
+  <!-- Subtle background atmosphere -->
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute inset-0 bg-gradient-to-b from-crackbot-950 via-crackbot-900 to-crackbot-950" />
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-terminal-green/5 rounded-full blur-3xl" />
+    <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-terminal-green/3 rounded-full blur-3xl" />
   </div>
 
-  <!-- Terminal header bar -->
-  <div class="relative z-10 w-full max-w-4xl mb-10">
-    <div class="bg-crackbot-950/90 backdrop-blur-sm border border-crackbot-700/50 rounded-t-xl px-4 py-3 flex items-center gap-2">
-      <div class="flex gap-1.5">
-        <div class="w-3 h-3 rounded-full bg-terminal-red" />
-        <div class="w-3 h-3 rounded-full bg-terminal-amber" />
-        <div class="w-3 h-3 rounded-full bg-terminal-green" />
-      </div>
-      <span class="terminal-text text-xs ml-2 flex-1 text-crackbot-400">system@crackbot:~$</span>
-      <span class="terminal-text text-xs text-crackbot-500">cat /etc/crackbot/mission</span>
-      <kbd class="px-1.5 py-0.5 bg-crackbot-800 border border-crackbot-700 rounded text-xs text-crackbot-400 ml-auto">ENTER</kbd>
-    </div>
-    <div class="bg-crackbot-950/90 backdrop-blur-sm border border-crackbot-700/50 border-t-0 rounded-b-xl px-4 py-4 font-mono text-sm text-crackbot-200 whitespace-pre-wrap">
-      <span class="text-terminal-green">MISSION:</span> Independent cybersecurity research, responsible disclosure, open tooling, and community-driven threat intelligence.
-    </div>
-  </div>
-
-  <!-- Main content -->
-  <div class="relative z-10 w-full max-w-4xl text-center">
-    <div class="inline-flex items-center gap-2 bg-crackbot-900/50 border border-crackbot-700/50 rounded-full px-4 py-1.5 mb-6">
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <!-- Status badge -->
+    <div class="inline-flex items-center gap-2 bg-crackbot-900/50 border border-crackbot-700/50 rounded-full px-4 py-1.5 mb-8 text-xs sm:text-sm">
       <span class="relative flex h-2 w-2">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-terminal-green opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2 w-2 bg-terminal-green"></span>
       </span>
-      <span class="terminal-text text-xs text-terminal-green uppercase tracking-wider">ACTIVE RESEARCH PLATFORM</span>
+      <span class="font-mono text-terminal-green uppercase tracking-wider">ACTIVE RESEARCH PLATFORM</span>
     </div>
 
-    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight mb-4 font-mono leading-tight">
+    <!-- Main headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight mb-6 font-mono leading-tight">
       <span class="text-terminal-green">{title}</span>
     </h1>
-    <p class="text-base sm:text-lg md:text-xl text-crackbot-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+    <p class="text-base sm:text-lg md:text-xl text-crackbot-400 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
       {subtitle}
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+    <!-- Primary CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
       <Button size="lg" icon="github" iconPosition="left" href="https://github.com/CrackB0t" target="_blank" rel="noopener">
         GitHub
       </Button>
-      <Button variant="ghost" size="lg" href="mailto:system@crackbot.in">
+      <Button variant="outline" size="lg" href="mailto:system@crackbot.in">
         Contact
       </Button>
     </div>
+
+    <!-- Trust indicators -->
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-sm text-crackbot-500">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-terminal-green" />
+        <span>Open Source</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-terminal-green" />
+        <span>Responsible Disclosure</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-terminal-green" />
+        <span>Community Driven</span>
+      </div>
+    </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-crackbot-500 md:block hidden">
+  <!-- Scroll indicator (mobile only) -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-crackbot-500 md:hidden">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
     </svg>
