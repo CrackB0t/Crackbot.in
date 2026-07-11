@@ -1,0 +1,122 @@
+[
+  {
+    "id": "malware-analysis",
+    "title": "Malware Analysis",
+    "icon": "bug",
+    "description": "Deep-dive reverse engineering, behavioral analysis, unpacking, and family classification of malicious binaries.",
+    "tags": [
+      "Reverse Engineering",
+      "Sandbox Evasion",
+      "YARA",
+      "CAPA",
+      "Deobfuscation"
+    ],
+    "status": "active",
+    "cta": "Read Reports"
+  },
+  {
+    "id": "threat-intelligence",
+    "title": "Threat Intelligence",
+    "icon": "radar",
+    "description": "Curated advisories, IOC feeds, attribution tracking, campaign correlation, and defensive guidance for defenders.",
+    "tags": [
+      "ATT&CK Mapping",
+      "IOC Enrichment",
+      "APT Tracking",
+      "Campaign Correlation",
+      "MITRE"
+    ],
+    "status": "active",
+    "cta": "View Advisories"
+  },
+  {
+    "id": "vulnerability-research",
+    "title": "Vulnerability Research",
+    "icon": "shield-alert",
+    "description": "Zero-day discovery, root cause analysis, exploit development, and responsible disclosure coordination.",
+    "tags": [
+      "Fuzzing",
+      "Root Cause Analysis",
+      "Exploit Dev",
+      "CVE Coordination",
+      "Patch Analysis"
+    ],
+    "status": "active",
+    "cta": "View CVEs"
+  },
+  {
+    "id": "digital-forensics",
+    "title": "Digital Forensics & IR",
+    "icon": "search",
+    "description": "Memory forensics, disk analysis, timeline reconstruction, artifact parsing, and incident response methodology.",
+    "tags": [
+      "Volatility",
+      "Plaso",
+      "Timeline Analysis",
+      "Memory Dump",
+      "Artifact Parsing"
+    ],
+    "status": "building",
+    "cta": "Coming Soon"
+  },
+  {
+    "id": "security-tooling",
+    "title": "Security Tool Development",
+    "icon": "terminal",
+    "description": "Open-source scanners, analyzers, automation frameworks, and defensive utilities for the community.",
+    "tags": [
+      "Go/Rust/Python",
+      "CLI Tools",
+      "Burp Extensions",
+      "VS Code Ext",
+      "Automation"
+    ],
+    "status": "active",
+    "cta": "View Tools"
+  },
+  {
+    "id": "cloud-security",
+    "title": "Cloud & Container Security",
+    "icon": "cloud",
+    "description": "Kubernetes hardening, cloud misconfiguration hunting, CI/CD pipeline security, and serverless threat modeling.",
+    "tags": [
+      "K8s Security",
+      "CSPM",
+      "CWPP",
+      "Supply Chain",
+      "IaC Scanning"
+    ],
+    "status": "planned",
+    "cta": "Roadmap"
+  },
+  {
+    "id": "malware-research",
+    "title": "Malware Research & Hunting",
+    "icon": "target",
+    "description": "Behavioral clustering, infrastructure tracking, C2 takedown collaboration, and threat hunting rule sets.",
+    "tags": [
+      "Clustering",
+      "C2 Tracking",
+      "Takedown Ops",
+      "Sigma Rules",
+      "YARA Rulesets"
+    ],
+    "status": "active",
+    "cta": "View Rules"
+  },
+  {
+    "id": "community-education",
+    "title": "Community & Education",
+    "icon": "users",
+    "description": "Technical blogs, workshops, CTF challenges, mentorship, and open collaboration for defenders worldwide.",
+    "tags": [
+      "Writeups",
+      "Workshops",
+      "CTFs",
+      "Mentorship",
+      "Open Source"
+    ],
+    "status": "active",
+    "cta": "Join Us"
+  }
+]
