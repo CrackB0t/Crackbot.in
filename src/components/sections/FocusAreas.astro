@@ -1,0 +1,22 @@
+---
+// FocusAreas.astro - Focus areas grid section
+import FocusCard from '../ui/FocusCard.astro';
+import SectionHeader from '../ui/SectionHeader.astro';
+import { focusAreas } from '../../data/focus-areas.json';
+---
+
+<section id="focus" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <SectionHeader
+      label="CORE FOCUS AREAS"
+      title="Research Domains"
+      description="Each domain represents a pillar of our research philosophy. Cards marked ACTIVE have live content — others are in active development."
+    />
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6" id="focus-grid">
+      {focusAreas.map((area, index) => (
+        <FocusCard area={area} index={index} />
+      ))}
+    </div>
+  </div>
+</section>

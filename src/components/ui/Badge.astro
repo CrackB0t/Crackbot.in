@@ -1,0 +1,33 @@
+---
+// Badge.astro - Status badge component
+interface Props {
+  children: string;
+  variant?: 'active' | 'building' | 'planned' | 'default';
+  class?: string;
+  pulse?: boolean;
+}
+
+const { children, variant = 'default', class: className = '', pulse = false } = Astro.props;
+
+const variants = {
+  active: 'bg-terminal-green/20 text-terminal-green border-terminal-green/30',
+  building: 'bg-terminal-amber/20 text-terminal-amber border-terminal-amber/30',
+  planned: 'bg-crackbot-700 text-crackbot-400 border-crackbot-600',
+  default: 'bg-crackbot-800 text-crackbot-300 border-crackbot-600'
+};
+
+const baseStyles = 'inline-flex items-center px-2 py-0.5 text-xs font-mono font-medium rounded border';
+const pulseClass = pulse ? 'animate-pulse-slow' : '';
+---
+
+<span class={`${baseStyles} ${variants[variant]} ${pulseClass} ${className}`}>
+  {children}
+</span>
+
+<style>
+  @keyframes pulse-slow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+</style>

@@ -1,0 +1,33 @@
+---
+// CTA.astro - Call to action section
+import Button from '../ui/Button.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  githubUrl?: string;
+  email?: string;
+}
+
+const { 
+  title = "Ready to Contribute?",
+  description = "We're building a community of researchers, analysts, and engineers. Whether you hunt bugs, analyze malware, write tools, or publish papers — there's a place here.",
+  githubUrl = "https://github.com/CrackB0t",
+  email = "mailto:system@crackbot.in"
+} = Astro.props;
+---
+
+<section id="join" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">{title}</h2>
+    <p class="text-crackbot-300 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">{description}</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <Button size="lg" icon="github" iconPosition="left" href={githubUrl} target="_blank" rel="noopener">
+        Join on GitHub
+      </Button>
+      <Button variant="ghost" size="lg" href={email}>
+        Email Us
+      </Button>
+    </div>
+  </div>
+</section>

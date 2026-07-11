@@ -1,0 +1,45 @@
+{
+  "principles": [
+    {
+      "id": "ethics",
+      "title": "Ethics Before Exploitation",
+      "description": "We research to defend. Every technique we publish includes detection and mitigation guidance."
+    },
+    {
+      "id": "authorization",
+      "title": "Authorization Before Testing",
+      "description": "No unauthorized access. All research conducted in controlled environments or with explicit permission."
+    },
+    {
+      "id": "quality",
+      "title": "Quality Over Quantity",
+      "description": "One thorough analysis beats ten shallow write-ups. We optimize for depth and reproducibility."
+    },
+    {
+      "id": "evidence",
+      "title": "Evidence Over Assumptions",
+      "description": "Claims backed by artifacts — PCAPs, memory dumps, binaries, logs. Reproducibility is non-negotiable."
+    },
+    {
+      "id": "team-success",
+      "title": "Team Success Over Individual Recognition",
+      "description": "Credit is shared. Publications are collaborative. The group's reputation outlasts any single contribution."
+    },
+    {
+      "id": "learning",
+      "title": "Continuous Learning",
+      "description": "The threat landscape evolves daily. We invest in skill growth, tool mastery, and cross-domain knowledge."
+    },
+    {
+      "id": "collaboration",
+      "title": "Open Collaboration",
+      "description": "We build in the open. Tools, datasets, and methodologies are shared for collective defense."
+    },
+    {
+      "id": "disclosure",
+      "title": "Respect for Privacy, Law & Responsible Disclosure",
+      "description": "We operate within legal and ethical boundaries. Disclosure follows coordinated vulnerability disclosure best practices."
+    }
+  ],
+  "codeBlock": "# crackbot/principles.md\n# Research Philosophy - Immutable Principles\n\nPRINCIPLES = [\n    \"ethics_before_exploitation\",\n    \"authorization_before_testing\", \n    \"quality_over_quantity\",\n    \"evidence_over_assumptions\",\n    \"team_success_over_individual_recognition\",\n    \"continuous_learning\",\n    \"open_collaboration\",\n    \"respect_privacy_law_responsible_disclosure\"\n]\n\ndef validate_finding(finding):\n    \"\"\"Every finding must satisfy all gates before publication.\"\"\"\n    return all([\n        finding.has_detection_guidance,\n        finding.has_mitigation_steps,\n        finding.has_reproducible_artifacts,\n        finding.has_vendor_coordination_proof,\n        finding.peer_reviewed\n    ])\n\nclass Researcher:\n    def __init__(self, handle):\n        self.handle = handle\n        self.credibility = 0\n        self.findings = []\n    \n    def publish(self, finding):\n        if validate_finding(finding):\n            self.credibility += finding.impact_score\n            self.findings.append(finding)\n            return True\n        raise ValueError(\"Finding fails validation gates\")\n\n# \"Curiosity drives research. Integrity builds trust. Collaboration creates impact.\""
+}

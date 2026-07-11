@@ -1,122 +1,76 @@
-[
-  {
-    "id": "malware-analysis",
-    "title": "Malware Analysis",
-    "icon": "bug",
-    "description": "Deep-dive reverse engineering, behavioral analysis, unpacking, and family classification of malicious binaries.",
-    "tags": [
-      "Reverse Engineering",
-      "Sandbox Evasion",
-      "YARA",
-      "CAPA",
-      "Deobfuscation"
-    ],
-    "status": "active",
-    "cta": "Read Reports"
-  },
-  {
-    "id": "threat-intelligence",
-    "title": "Threat Intelligence",
-    "icon": "radar",
-    "description": "Curated advisories, IOC feeds, attribution tracking, campaign correlation, and defensive guidance for defenders.",
-    "tags": [
-      "ATT&CK Mapping",
-      "IOC Enrichment",
-      "APT Tracking",
-      "Campaign Correlation",
-      "MITRE"
-    ],
-    "status": "active",
-    "cta": "View Advisories"
-  },
-  {
-    "id": "vulnerability-research",
-    "title": "Vulnerability Research",
-    "icon": "shield-alert",
-    "description": "Zero-day discovery, root cause analysis, exploit development, and responsible disclosure coordination.",
-    "tags": [
-      "Fuzzing",
-      "Root Cause Analysis",
-      "Exploit Dev",
-      "CVE Coordination",
-      "Patch Analysis"
-    ],
-    "status": "active",
-    "cta": "View CVEs"
-  },
-  {
-    "id": "digital-forensics",
-    "title": "Digital Forensics & IR",
-    "icon": "search",
-    "description": "Memory forensics, disk analysis, timeline reconstruction, artifact parsing, and incident response methodology.",
-    "tags": [
-      "Volatility",
-      "Plaso",
-      "Timeline Analysis",
-      "Memory Dump",
-      "Artifact Parsing"
-    ],
-    "status": "building",
-    "cta": "Coming Soon"
-  },
-  {
-    "id": "security-tooling",
-    "title": "Security Tool Development",
-    "icon": "terminal",
-    "description": "Open-source scanners, analyzers, automation frameworks, and defensive utilities for the community.",
-    "tags": [
-      "Go/Rust/Python",
-      "CLI Tools",
-      "Burp Extensions",
-      "VS Code Ext",
-      "Automation"
-    ],
-    "status": "active",
-    "cta": "View Tools"
-  },
-  {
-    "id": "cloud-security",
-    "title": "Cloud & Container Security",
-    "icon": "cloud",
-    "description": "Kubernetes hardening, cloud misconfiguration hunting, CI/CD pipeline security, and serverless threat modeling.",
-    "tags": [
-      "K8s Security",
-      "CSPM",
-      "CWPP",
-      "Supply Chain",
-      "IaC Scanning"
-    ],
-    "status": "planned",
-    "cta": "Roadmap"
-  },
-  {
-    "id": "malware-research",
-    "title": "Malware Research & Hunting",
-    "icon": "target",
-    "description": "Behavioral clustering, infrastructure tracking, C2 takedown collaboration, and threat hunting rule sets.",
-    "tags": [
-      "Clustering",
-      "C2 Tracking",
-      "Takedown Ops",
-      "Sigma Rules",
-      "YARA Rulesets"
-    ],
-    "status": "active",
-    "cta": "View Rules"
-  },
-  {
-    "id": "community-education",
-    "title": "Community & Education",
-    "icon": "users",
-    "description": "Technical blogs, workshops, CTF challenges, mentorship, and open collaboration for defenders worldwide.",
-    "tags": [
-      "Writeups",
-      "Workshops",
-      "CTFs",
-      "Mentorship",
-      "Open Source"
-    ],
-    "status": "active",
-    "cta": "Join Us"
-  }
-]
+{
+  "focusAreas": [
+    {
+      "id": "vuln-research",
+      "title": "Vulnerability Research",
+      "icon": "bug",
+      "description": "Deep-dive vulnerability analysis, root cause analysis, exploit development, and responsible disclosure coordination with vendors and CERTs.",
+      "tags": ["CVE Analysis", "Root Cause", "Exploit Dev", "RCE", "0-day", "Disclosure"],
+      "status": "active",
+      "cta": "View Research"
+    },
+    {
+      "id": "threat-intel",
+      "title": "Threat Intelligence",
+      "icon": "radar",
+      "description": "Curated advisories, emerging threat tracking, breach notification monitoring, IOC collection, and defensive intelligence for blue teams.",
+      "tags": ["APT Tracking", "IOC Feeds", "Advisories", "Dark Web", "Attribution", "TTPs"],
+      "status": "building",
+      "cta": "Coming Soon"
+    },
+    {
+      "id": "disclosure",
+      "title": "Responsible Disclosure",
+      "icon": "shield-alert",
+      "description": "Structured vulnerability disclosure program, coordinated vendor communication, and public advisory publication with mitigation guidance.",
+      "tags": ["CVD", "Vendor Coord", "Advisories", "CERT Liaison", "Bug Bounty", "Safe Harbor"],
+      "status": "planned",
+      "cta": "Planned"
+    },
+    {
+      "id": "dfir",
+      "title": "Digital Forensics & DFIR",
+      "icon": "search",
+      "description": "Incident response tooling, forensic artifact parsers, timeline analysis, memory forensics, and evidence preservation workflows.",
+      "tags": ["Memory Forensics", "Disk Analysis", "Timeline", "Artifacts", "IR Playbooks", "Evidence"],
+      "status": "planned",
+      "cta": "Planned"
+    },
+    {
+      "id": "malware-analysis",
+      "title": "Malware Analysis",
+      "icon": "terminal",
+      "description": "Static and dynamic malware analysis, family classification, YARA rule development, unpacking, and behavioral profiling.",
+      "tags": ["Static Analysis", "Dynamic Analysis", "YARA Rules", "Unpacking", "C2 Tracking", "Attribution"],
+      "status": "building",
+      "cta": "Building"
+    },
+    {
+      "id": "ai-security",
+      "title": "AI for Cyber Security",
+      "icon": "cloud",
+      "description": "LLM-assisted vulnerability discovery, automated triage, intelligent log analysis, and AI-powered threat hunting workflows.",
+      "tags": ["LLM Sec", "Auto-Triage", "Vuln Discovery", "Threat Hunting", "Log Analysis", "Copilots"],
+      "status": "planned",
+      "cta": "Research Phase"
+    },
+    {
+      "id": "open-tools",
+      "title": "Open Source Security Tools",
+      "icon": "target",
+      "description": "Production-grade security tools released under permissive licenses — scanners, parsers, analyzers, and automation frameworks.",
+      "tags": ["CLI Tools", "Scanners", "Parsers", "Automation", "MIT/Apache", "Contributions Welcome"],
+      "status": "active",
+      "cta": "View Tools"
+    },
+    {
+      "id": "education",
+      "title": "Security Education & Community",
+      "icon": "users",
+      "description": "Technical blogs, research paper summaries, interactive labs, mentorship programs, and open knowledge sharing.",
+      "tags": ["Blog Posts", "Paper Reviews", "CTF Writeups", "Mentorship", "Workshops", "Open Knowledge"],
+      "status": "active",
+      "cta": "Read Blog"
+    }
+  ]
+}
