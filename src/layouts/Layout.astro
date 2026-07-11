@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import siteData from '../data/site.json';
+const site = siteData;
 ---
 <!doctype html>
 <html lang="en">
@@ -31,6 +33,7 @@ import '../styles/global.css';
           </div>
         </div>
         <p class="mt-4 text-center text-xs text-crackbot-500">© {new Date().getFullYear()} {site.name} • {site.tagline}</p>
-      </div    </footer>
+      </div
+    </footer>
   </body>
 </html>
