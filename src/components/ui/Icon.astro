@@ -1,5 +1,5 @@
 ---
-// Icon.astro - SVG icon system
+// Icon.astro - SVG icon system (handles both stroke and fill icons)
 interface Props {
   name: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
@@ -14,6 +14,9 @@ const sizes = {
   lg: 'w-6 h-6',
   xl: 'w-8 h-8'
 };
+
+// Icons that use fill (no stroke)
+const fillIcons = ['github', 'twitter', 'discord'];
 
 const icons: Record<string, string> = {
   bug: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19 14.5m0 0v5.714c0 .597-.237 1.17-.659 1.591L14.25 20.894" />',
@@ -38,8 +41,16 @@ const iconPath = icons[name];
 if (!iconPath) {
   console.warn(`Icon "${name}" not found`);
 }
+
+const isFillIcon = fillIcons.includes(name);
 ---
 
-<svg class={`text-terminal-green ${sizes[size]} ${className}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+<svg 
+  class={`text-terminal-green ${sizes[size]} ${className}`} 
+  fill={isFillIcon ? 'currentColor' : 'none'} 
+  stroke={isFillIcon ? 'none' : 'currentColor'} 
+  viewBox="0 0 24 24" 
+  aria-hidden="true"
+>
   {iconPath && <>{iconPath}</>}
 </svg>
