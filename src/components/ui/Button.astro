@@ -3,7 +3,6 @@
 import Icon from './Icon.astro';
 
 interface Props {
-  children: string;
   variant?: 'primary' | 'ghost' | 'outline';
   href?: string;
   class?: string;
@@ -16,7 +15,6 @@ interface Props {
 }
 
 const {
-  children,
   variant = 'primary',
   href,
   class: className = '',
@@ -44,7 +42,7 @@ const sizes = {
 
 const isLink = !!href;
 const Tag = isLink ? 'a' : 'button';
-const props = isLink 
+const props = isLink
   ? { href, target, rel: rel || (target === '_blank' ? 'noopener noreferrer' : undefined) }
   : { type };
 
@@ -52,6 +50,6 @@ const props = isLink
 
 <Tag {...props} class={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}>
   {icon && iconPosition === 'left' && <Icon name={icon} size={size === 'sm' ? 'sm' : 'md'} />}
-  {children}
+  <slot />
   {icon && iconPosition === 'right' && <Icon name={icon} size={size === 'sm' ? 'sm' : 'md'} />}
 </Tag>
